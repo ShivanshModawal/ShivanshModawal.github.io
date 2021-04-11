@@ -10,22 +10,86 @@
 <body>
 
 	<div class="jumbotron text-center">
-  <h1>SHIVANSH MODAWAL</h1>
-  <p>
-  	Email:modawalshivansh@gmail.com<br>
-  	Ph: +1 (312)-358-3636
-  </p> 
-</div>
+		<h1>SHIVANSH MODAWAL</h1>
+		<p>
+		Email:modawalshivansh@gmail.com<br>
+		Ph: +1 (312)-358-3636
+		</p> 
+	</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Education</h3>
-      <p>Bachelors in Computer Science<br>University of Illinois at Chicago</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+			  <h3>Education</h3>
+			  <p>Bachelors in Computer Science<br>University of Illinois at Chicago</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="mdc-card mdc-card--outlined template">
+  <div class="mdc-card__primary-action">
+    <div class="my-card__media mdc-card__media mdc-card__media--16-9">
+      <div class="mdc-card__media-content">Title</div>
+    </div>
+   
+  </div>
+  <div class="mdc-card__actions">
+    <div class="mdc-card__action-buttons">
+    	 <lable class="mdc-button mdc-card__action mdc-card__action--button">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Action </span>
+      </lable>
+       <lable class="mdc-button mdc-card__action mdc-card__action--button">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Action </span>
+      </lable>
+      <button class="mdc-button mdc-card__action mdc-card__action--button">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Action 1</span>
+      </button>
+      <button class="mdc-button mdc-card__action mdc-card__action--button">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Action 2</span>
+      </button>
     </div>
   </div>
 </div>
 
+
+
+<style>
+	.template{display:none;}
+</style>
+	
+	<script src = "projects.js">
+		
+	</script>
+	
+	<script>
+		projects.forEach((projects)=>{
+		let clone = document.querySelector(".template").cloneNode(true);
+		clone.querySelector(".mdc-card__media-content").innerText = projects.Name;
+		clone.querySelector(".my-card__media").style.backgroundImage = "url(projects.img)";
+		clone.querySelectorAll(".mdc-button__label")[0].innerText = projects.Discription;
+		clone.querySelectorAll(".mdc-button__label")[1].innerText = projects.Language;
+		clone.querySelectorAll(".mdc-button__label")[2].innerText = "View Repo";
+		clone.querySelectorAll(".mdc-button__label")[3].innerText = "View Page";
+
+		clone.classList.remove("template");
+
+		document.body.append(clone);
+		})
+
+	</script>
+
+
+<style>
+	.my-card__media {
+		height: 350px;
+ 		width: 350px;
+  		/*background-image: url("a.jpg");*/
+}
+</style>
 	
 </body>
 </html>
